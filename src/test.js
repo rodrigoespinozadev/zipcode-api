@@ -17,7 +17,7 @@ describe("basic tests", () => {
   test("invalid request method", async () => {
     response = await handler({
       'httpMethod': 'DELETE',
-      'path': '/resource'
+      'path': '/zipcode'
     });
 
     expect(response.statusCode).toBe(405);
@@ -26,7 +26,7 @@ describe("basic tests", () => {
   test("result is not null", async () => {
     response = await handler({
       'httpMethod': 'GET',
-      'path': '/resource'
+      'path': '/zipcode'
     });
 
     expect(response.body).not.toBeNull();
@@ -35,7 +35,7 @@ describe("basic tests", () => {
   test("post request success", async () => {
     response = await handler({
       'httpMethod': 'POST',
-      'path': '/resource',
+      'path': '/zipcode',
       'headers': {
         'content-type': 'application/json'
       },
@@ -48,7 +48,7 @@ describe("basic tests", () => {
   test('throws error', async() => {
     await expect(handler({
         "httpMethod": "POST",
-        "path": "/resource",
+        "path": "/zipcode",
     })).rejects.toThrow();
   });
 });

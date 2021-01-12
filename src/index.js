@@ -5,9 +5,10 @@ const { locationDistance } = require('./utils');
 // lambda-like handler function
 module.exports.handler = async event => {
   const { httpMethod, path, headers, queryStringParameters } = event;
+  console.log(event);
   const response = defaultResponse();
   const routes = [
-    '/resource'
+    '/zipcode'
   ];
 
   // Get Request Type
