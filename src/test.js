@@ -31,6 +31,19 @@ describe("basic tests", () => {
 
     expect(response.body).not.toBeNull();
   });
+  
+  test("post request success", async () => {
+    response = await handler({
+      'httpMethod': 'POST',
+      'path': '/resource',
+      'headers': {
+        'content-type': 'application/json'
+      },
+      'body': "{'title':'hello world'}"
+    });
+
+    expect(response.body).not.toBeNull();
+  });
 
   test('throws error', async() => {
     await expect(handler({
